@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 # Resource Block
-resource "aws_instance" "ec2demo" {
+resource "aws_instance" "ec2-demo" {
   ami           = "ami-05ff5eaef6149df49" # Amazon Linux in eu-central-1, update as per your region
   instance_type = "t2.micro"
 }

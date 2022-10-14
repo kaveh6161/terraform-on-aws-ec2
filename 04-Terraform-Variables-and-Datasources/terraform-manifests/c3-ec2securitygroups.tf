@@ -48,7 +48,6 @@ resource "aws_security_group" "vpc-web" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   tags = {
     Name = "vpc-web"
   }

@@ -18,10 +18,10 @@ module "rdsdb" {
 
   # All available versions: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt
   engine               = "mysql"
-  engine_version       = "8.0.20"
+  engine_version       = "8.0.30"
   family               = "mysql8.0" # DB parameter group
   major_engine_version = "8.0"      # DB option group
-  instance_class       = "db.t3.large"
+  instance_class       = "db.t3.micro"
 
   allocated_storage     = 20
   max_allocated_storage = 100
@@ -36,10 +36,11 @@ module "rdsdb" {
   skip_final_snapshot     = true
   deletion_protection     = false
 
-  performance_insights_enabled          = true
-  performance_insights_retention_period = 7
-  create_monitoring_role                = true
-  monitoring_interval                   = 60
+  ## below features are not supported in free tier
+  #performance_insights_enabled          = true
+  #performance_insights_retention_period = 7
+  #create_monitoring_role                = true
+  #monitoring_interval                   = 60
 
   parameters = [
     {
